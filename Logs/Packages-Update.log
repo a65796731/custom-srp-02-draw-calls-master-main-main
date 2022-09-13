@@ -1,0 +1,12 @@
+
+=== Tue Sep  6 11:24:05 2022
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were added:
+  com.unity.ide.visualstudio@2.0.5
+The following packages were updated:
+  com.unity.render-pipelines.core from version 6.9.2 to 10.3.1
+The following packages were removed:
+  com.unity.package-manager-ui@2.2.0
