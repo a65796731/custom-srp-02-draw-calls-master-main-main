@@ -26,8 +26,11 @@ public struct Directional
 [System.Serializable]
 public class ShadowSettings 
 {
-    [Min(0f)]
+    [Min(0.001f)]
     public float maxDistance = 100f;
+    [Range(0.001f, 1f)]
+    public float distanceFade = 0.1f;
+    
     public Directional directional = new Directional
     {
         atlasSize = TextureSize._1024,

@@ -8,11 +8,19 @@ struct DirectionalShadowData
     float strength;
     int tileIndex;
 };
+struct ShadowData
+{
+  int cascadeIndex;
+  float strength;
+};
 TEXTURE2D_SHADOW(_DirectionalShadowAtlas);
 #define SHADOW_SAMPLER sampler_linear_clamp_compare
 SAMPLER_CMP(SHADOW_SAMPLER);
 CBUFFER_START(_CustomShadows)
-float4x4 _DirectionalShadowMatrices[MAX_SHADOW_DIRECTIONAL_LIGHT_COUNT*MAX_CASCADE_COUNT];
+    int _CascadeCount;
+	float4 _ShadowDistanceFade;
+	float4 _CascadeCullingSpheres[MAX_CASCADE_COUNT];
+    float4x4 _DirectionalShadowMatrices[MAX_SHADOW_DIRECTIONAL_LIGHT_COUNT*MAX_CASCADE_COUNT];
 CBUFFER_END
 
 float SampleDirectionalShadowAtlas (float3 positionSTS)

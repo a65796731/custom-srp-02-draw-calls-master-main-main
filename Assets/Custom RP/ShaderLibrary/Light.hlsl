@@ -15,24 +15,55 @@ struct Light
 	float3 direction;
 	float  attenuation;
 };
+
 int GetDirectionalLightCount()
 {
 	return  _DircetionalLightCount;
 }
-DirectionalShadowData GetDirectionalShadowData(int lightIndex)
+float FadedShadowStrength(float distence,float scale,float fade)
+{
+ return saturate((1-scale*distence)*fade);
+}
+ShadowData GetShadowData(Surface surfaceWS)
+{
+  ShadowData data;
+  data.strength=FadedShadowStrength(surfaceWS.depth,_ShadowDistanceFade.x,_ShadowDistanceFade.y);
+  int i;
+  //找到position属于哪个联级里
+  for(int i=0;i<_CascadeCount;i++)
+  {
+    float4 cullingSpheres= _CascadeCullingSpheres[i];
+	float disSqr=DistanceSquared(surfaceWS.position,cullingSpheres.xyz);
+	if(disSqr<cullingSpheres.w)
+	{
+	
+	   break;
+	}
+  }
+  if(i==_CascadeCount)
+  {
+     data.strength=0.0;
+  }
+  data.cascadeIndex=i;
+  return data;
+}
+DirectionalShadowData GetDirectionalShadowData(int lightIndex,ShadowData shadowData)
 {
     DirectionalShadowData data;
-	data.strength = _DirectionalLightShadowData[lightIndex].x;
-	data.tileIndex = _DirectionalLightShadowData[lightIndex].y;
+	data.strength = _DirectionalLightShadowData[lightIndex].x*shadowData.strength;
+	data.tileIndex = _DirectionalLightShadowData[lightIndex].y+ shadowData.cascadeIndex;
 	return data;
 }
-Light GetDirectionalLight(int index,Surface surfaceWS)
+
+Light GetDirectionalLight(int index,Surface surfaceWS,ShadowData shadowData)
 {
 	Light light;
 	light.color = _DirectionalLightColor[index].rgb;
 	light.direction = _DircetionalLightDirection[index].xyz;
-	DirectionalShadowData data=GetDirectionalShadowData(index);
+
+	DirectionalShadowData data=GetDirectionalShadowData(index,shadowData);
     light.attenuation=GetDirectionalShadowAttenuation(data,surfaceWS);
+	//  light.attenuation=  shadowData.cascadeIndex*0.25;
 	return light;
 }
 

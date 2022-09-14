@@ -50,3 +50,180 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+*.bin
+.vs/custom-srp-02-draw-calls-master-main-main/FileContentIndex/0612979b-41d5-44d9-8149-6b0622129162.vsidx
+.vs/custom-srp-02-draw-calls-master-main-main/FileContentIndex/2fdd6077-e785-40e6-9930-19e625dc453a.vsidx
+.vs/custom-srp-02-draw-calls-master-main-main/FileContentIndex/97674d23-d90c-42a3-9db1-8ac97b2e5e08.vsidx
+.vs/custom-srp-02-draw-calls-master-main-main/FileContentIndex/b535ef31-5e4c-4495-85ed-53dca8b2fcb8.vsidx
+.vs/custom-srp-02-draw-calls-master-main-main/FileContentIndex/b67ddd94-9e9d-4afb-b15b-d339e502c447.vsidx
+.vs/custom-srp-02-draw-calls-master-main-main/FileContentIndex/fe86d022-cb6e-45ff-915f-cb08af2bd1ae.vsidx
+.vs/custom-srp-02-draw-calls-master-main-main/v17/.suo
+Assets/Custom RP.asset
+Assets/Custom RP/Runtime/Shadow.cs
+Assets/Custom RP/Runtime/ShadowSettings.cs
+Assets/Custom RP/ShaderLibrary/Common.hlsl
+Assets/Custom RP/ShaderLibrary/Light.hlsl
+Assets/Custom RP/ShaderLibrary/Lighting.hlsl
+Assets/Custom RP/ShaderLibrary/shadow.hlsl
+Assets/Custom RP/ShaderLibrary/SurfaceHLSL.hlsl
+Assets/Custom RP/Shaders/LitPass.hlsl
+Assets/Scenes/SampleScene.unity
+Library/AnnotationManager
+Library/ArtifactDB
+Library/Artifacts/06/068139914fb3855da9bd3a5f20b0c62d
+Library/Artifacts/10/109286beecce97756137814be2945703
+Library/Artifacts/14/14176f208e56c380a09ccd5129fb39b9
+Library/Artifacts/18/18d66b169b7a86c4d23f5070914d9049
+Library/Artifacts/1b/1b6d4d54adc0ce7c9bc70e55a590a877
+Library/Artifacts/20/206fa850c908b5bcc3b79d21d01027b4
+Library/Artifacts/25/25f5ee2cfd6e15567669d09c49a746ef
+Library/Artifacts/2c/2c01b08d878626a7207368ff37619071
+Library/Artifacts/2d/2df6ab2b5ac7334c9d9d8a4aebb7a2fb
+Library/Artifacts/30/3076605556c8782c1bc40a3bfc3f5141
+Library/Artifacts/35/354ca651c93401a408c48fb1b173fb4e
+Library/Artifacts/36/362cc61030ed7861edd26cc7d06e0beb
+Library/Artifacts/3b/3bf87e76593206b4a3b57dae1c329d7c
+Library/Artifacts/44/4452508c061312dd75e88dc05576cb4e
+Library/Artifacts/44/44ea80313bea0638598962ed38b7a6d9
+Library/Artifacts/48/48fc12a353e1494d6c868b105f86d5ee
+Library/Artifacts/49/499f8c5aa73911292e84d13f86e30d14
+Library/Artifacts/4c/4c882013f0324506df771c946f8b7af4
+Library/Artifacts/4f/4f21ccfe37de7de0388b44e85c2b483d
+Library/Artifacts/4f/4f2ed9162333a82758c39013d392ea0e
+Library/Artifacts/50/504a2e46c6eede4b9858741f42ff4365
+Library/Artifacts/56/5607fd81714041dd3abbbae66a32b350
+Library/Artifacts/59/59753c8fb9fcdecae106d1f9e98358df
+Library/Artifacts/5b/5b5f99ee58bca69bf00ffdf35da74c12
+Library/Artifacts/5b/5bdfc8d6f658b493085748fb6baedb92
+Library/Artifacts/64/6458f51170baf03e1009b80c51c122e6
+Library/Artifacts/64/6481368c5c98065e1ca5eb344aec7708
+Library/Artifacts/64/64dd101043000b4e0c47bd85bc9694c4
+Library/Artifacts/64/64f6eef81e6c7ed672d9dac65de0ed33
+Library/Artifacts/70/706c7b969409f19fb8381aea168ce99a
+Library/Artifacts/71/71486c7135c6dc77d6a8ec7c24b81c55
+Library/Artifacts/75/754ff59ce918c009db3ca734fc0682f4
+Library/Artifacts/87/87bd12ffdad0c95b0620883f00a76115
+Library/Artifacts/91/919bc3044c24c7c8912f458c3f734a92
+Library/Artifacts/94/94f863b48eb58dd7d763452c016a9a90
+Library/Artifacts/99/992a091e666022daed1f0d57e40eb32c
+Library/Artifacts/9b/9b93dde3866933bc68971935654bdd57
+Library/Artifacts/9d/9d922be39edc61b9c6c1f9f4743ea276
+Library/Artifacts/b0/b0665f3b8d1b34ef4fcc0f456ce27915
+Library/Artifacts/b0/b072d645249fd8ac499f20fedf7ed899
+Library/Artifacts/b4/b4fd270ed6b7dc5e8acb9453931093e2
+Library/Artifacts/bb/bb1ce91226a8eaec66fa4d0e4c73fe30
+Library/Artifacts/c3/c37ce525295b0b4f421b0b710d264876
+Library/Artifacts/c8/c8e4955c93e726d1a3a879d066fb992d
+Library/Artifacts/ca/cae2b6f5a5cbe81e79b12ed0f5fa332c
+Library/Artifacts/cb/cbc4c9febc25be7316e5ddb6c3e0e9a5
+Library/Artifacts/ce/ce2e2acdf73e6d5479e54ff7cf4116ed
+Library/Artifacts/d2/d22f09d30ed2180660e7e0881ecf116e
+Library/Artifacts/d9/d994f3fe1276afb9a30ecb3ddedae798
+Library/Artifacts/da/daf6103c888571a612e05664f6e6bf18
+Library/Artifacts/de/de7137eda14f2c4e3c06b53acc302773
+Library/Artifacts/e1/e1943c6f348b437c414b3026aa6f42dc
+Library/Artifacts/e2/e2022ac87d7fb00ca91cca6e360e86c1
+Library/Artifacts/e2/e29e1419497beb91994f2b3c32e3306a
+Library/Artifacts/e5/e5db174a3456124cb4d8f59cc6122fc6
+Library/Artifacts/e7/e7c20510024c21a6771b3adf63d78bb8
+Library/Artifacts/ee/ee82ebc8b259f2f847def4fb3a25775d
+Library/Artifacts/f1/f1b2b759f4cfa6981f4dfa22a179b523
+Library/Artifacts/f5/f57c6246839f5e5b62f44a24d6c11029
+Library/Artifacts/fd/fd27d00763088cda744ea27a83e0ea33
+Library/Bee/backend_profiler0.traceevents
+Library/Bee/fullprofile.json
+Library/Bee/tundra.digestcache
+Library/Bee/tundra.log.json
+Library/Bee/TundraBuildState.state
+Library/SceneVisibilityState.asset
+Library/Search/transactions.db
+Library/ShaderCache.db
+Library/SourceAssetDB
+Library/StateCache/SceneView/8c/8cd7c613bf844de3b80696e27a479d5e.json
+Logs/AssetImportWorker0-prev.log
+Logs/AssetImportWorker0.log
+Logs/AssetImportWorker1-prev.log
+Logs/AssetImportWorker1.log
+Logs/AssetImportWorker2-prev.log
+Logs/AssetImportWorker3-prev.log
+Logs/AssetImportWorker4-prev.log
+Logs/AssetImportWorker5-prev.log
+Logs/shadercompiler-AssetImportWorker0.log
+Logs/shadercompiler-UnityShaderCompiler.exe0.log
+Logs/shadercompiler-UnityShaderCompiler.exe1.log
+Logs/shadercompiler-UnityShaderCompiler.exe10.log
+Logs/shadercompiler-UnityShaderCompiler.exe11.log
+Logs/shadercompiler-UnityShaderCompiler.exe12.log
+Logs/shadercompiler-UnityShaderCompiler.exe13.log
+Logs/shadercompiler-UnityShaderCompiler.exe14.log
+Logs/shadercompiler-UnityShaderCompiler.exe15.log
+Logs/shadercompiler-UnityShaderCompiler.exe2.log
+Logs/shadercompiler-UnityShaderCompiler.exe3.log
+Logs/shadercompiler-UnityShaderCompiler.exe4.log
+Logs/shadercompiler-UnityShaderCompiler.exe5.log
+Logs/shadercompiler-UnityShaderCompiler.exe6.log
+Logs/shadercompiler-UnityShaderCompiler.exe7.log
+Logs/shadercompiler-UnityShaderCompiler.exe8.log
+Logs/shadercompiler-UnityShaderCompiler.exe9.log
+obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache
+obj/Debug/Assembly-CSharp.csproj.CoreCompileInputs.cache
+obj/Debug/Assembly-CSharp.csproj.FileListAbsolute.txt
+UserSettings/Layouts/default-2021.dwlt
+UserSettings/Layouts/default-2021.dwlt
+obj/Debug/Assembly-CSharp.csproj.FileListAbsolute.txt
+obj/Debug/Assembly-CSharp.csproj.CoreCompileInputs.cache
+obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache
+Logs/shadercompiler-UnityShaderCompiler.exe9.log
+Logs/shadercompiler-UnityShaderCompiler.exe8.log
+Logs/shadercompiler-UnityShaderCompiler.exe7.log
+Logs/shadercompiler-UnityShaderCompiler.exe6.log
+Logs/shadercompiler-UnityShaderCompiler.exe5.log
+Logs/shadercompiler-UnityShaderCompiler.exe4.log
+Logs/shadercompiler-UnityShaderCompiler.exe3.log
+Logs/shadercompiler-UnityShaderCompiler.exe2.log
+Logs/shadercompiler-UnityShaderCompiler.exe15.log
+Logs/shadercompiler-UnityShaderCompiler.exe14.log
+Logs/shadercompiler-UnityShaderCompiler.exe13.log
+Logs/shadercompiler-UnityShaderCompiler.exe12.log
+Logs/shadercompiler-UnityShaderCompiler.exe11.log
+Logs/shadercompiler-UnityShaderCompiler.exe10.log
+Logs/shadercompiler-UnityShaderCompiler.exe1.log
+Logs/shadercompiler-UnityShaderCompiler.exe0.log
+Logs/shadercompiler-AssetImportWorker0.log
+Logs/AssetImportWorker5-prev.log
+Logs/AssetImportWorker4-prev.log
+Logs/AssetImportWorker3-prev.log
+Logs/AssetImportWorker2-prev.log
+Logs/AssetImportWorker1.log
+Logs/AssetImportWorker1-prev.log
+Logs/AssetImportWorker0.log
+Logs/AssetImportWorker0-prev.log
+Library/StateCache/SceneView/8c/8cd7c613bf844de3b80696e27a479d5e.json
+Library/SourceAssetDB
+Library/ShaderCache.db
+Library/Search/transactions.db
+Library/SceneVisibilityState.asset
+Library/Bee/TundraBuildState.state
+Library/Bee/tundra.log.json
+Library/Bee/tundra.digestcache
+Library/Bee/fullprofile.json
+Library/Bee/backend_profiler0.traceevents
+Library/Artifacts/ee/ee82ebc8b259f2f847def4fb3a25775d
+Library/Artifacts/71/71486c7135c6dc77d6a8ec7c24b81c55
+Library/ArtifactDB
+Library/AnnotationManager
+Assets/Scenes/SampleScene.unity
+Assets/Custom RP/Shaders/LitPass.hlsl
+Assets/Custom RP/ShaderLibrary/SurfaceHLSL.hlsl
+Assets/Custom RP/ShaderLibrary/shadow.hlsl
+Assets/Custom RP/ShaderLibrary/Lighting.hlsl
+Assets/Custom RP/ShaderLibrary/Light.hlsl
+Assets/Custom RP/ShaderLibrary/Common.hlsl
+Assets/Custom RP/Runtime/ShadowSettings.cs
+Assets/Custom RP/Runtime/Shadow.cs
+Assets/Custom RP.asset
+.vs/custom-srp-02-draw-calls-master-main-main/v17/.suo
+.vs/custom-srp-02-draw-calls-master-main-main/FileContentIndex/fe86d022-cb6e-45ff-915f-cb08af2bd1ae.vsidx
+.vs/custom-srp-02-draw-calls-master-main-main/FileContentIndex/b67ddd94-9e9d-4afb-b15b-d339e502c447.vsidx
+.vs/custom-srp-02-draw-calls-master-main-main/FileContentIndex/2fdd6077-e785-40e6-9930-19e625dc453a.vsidx
+Assets/Custom RP/Runtime/Shadow.cs
