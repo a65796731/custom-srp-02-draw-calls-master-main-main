@@ -22,6 +22,8 @@ public struct Directional
     public float cascadeRatio1, cascadeRatio2, cascadeRatio3;
 
     public Vector3 CascadeRatios=>new Vector3(cascadeRatio1,cascadeRatio2,cascadeRatio3);
+    [Range(0.001f, 1f)]
+    public float cascadeFade;
 }
 [System.Serializable]
 public class ShadowSettings 
@@ -30,14 +32,15 @@ public class ShadowSettings
     public float maxDistance = 100f;
     [Range(0.001f, 1f)]
     public float distanceFade = 0.1f;
-    
+
     public Directional directional = new Directional
     {
         atlasSize = TextureSize._1024,
         cascadeCount = 4,
         cascadeRatio1 = 0.1f,
         cascadeRatio2 = 0.25f,
-        cascadeRatio3 = 0.5f
+        cascadeRatio3 = 0.5f,
+        cascadeFade = 0.1f
     };
    
 }

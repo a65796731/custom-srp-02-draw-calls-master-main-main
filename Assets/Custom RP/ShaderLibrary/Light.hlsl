@@ -27,15 +27,19 @@ float FadedShadowStrength(float distence,float scale,float fade)
 ShadowData GetShadowData(Surface surfaceWS)
 {
   ShadowData data;
-  data.strength=FadedShadowStrength(surfaceWS.depth,_ShadowDistanceFade.x,_ShadowDistanceFade.y);
+  data.strength=FadedShadowStrength(surfaceWS.depth,_ShadowDistenceFade.x,_ShadowDistenceFade.y);
   int i;
   //找到position属于哪个联级里
-  for(int i=0;i<_CascadeCount;i++)
+  for( i=0;i<_CascadeCount;i++)
   {
     float4 cullingSpheres= _CascadeCullingSpheres[i];
 	float disSqr=DistanceSquared(surfaceWS.position,cullingSpheres.xyz);
 	if(disSqr<cullingSpheres.w)
 	{
+	   if(i==_CascadeCount-1)
+	   {
+	     data.strength*=FadedShadowStrength(disSqr,_CascadeData[i].x,_ShadowDistenceFade.z);
+	   }
 	
 	   break;
 	}
@@ -52,6 +56,7 @@ DirectionalShadowData GetDirectionalShadowData(int lightIndex,ShadowData shadowD
     DirectionalShadowData data;
 	data.strength = _DirectionalLightShadowData[lightIndex].x*shadowData.strength;
 	data.tileIndex = _DirectionalLightShadowData[lightIndex].y+ shadowData.cascadeIndex;
+	data.normalbias = _DirectionalLightShadowData[lightIndex].z;
 	return data;
 }
 
@@ -62,7 +67,7 @@ Light GetDirectionalLight(int index,Surface surfaceWS,ShadowData shadowData)
 	light.direction = _DircetionalLightDirection[index].xyz;
 
 	DirectionalShadowData data=GetDirectionalShadowData(index,shadowData);
-    light.attenuation=GetDirectionalShadowAttenuation(data,surfaceWS);
+    light.attenuation=GetDirectionalShadowAttenuation(data,shadowData,surfaceWS);
 	//  light.attenuation=  shadowData.cascadeIndex*0.25;
 	return light;
 }
