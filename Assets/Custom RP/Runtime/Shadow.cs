@@ -20,14 +20,24 @@ public class Shadow
     ScriptableRenderContext context;
     CullingResults cullingResults;
     ShadowSettings shadowSettings;
-
+    static string[] directionFilterKeywords =
+    {
+        "_DIRECTIONAL_PCF3",
+        "_DIRECTIONAL_PCF5",
+        "_DIRECTIONAL_PCF7",
+    };
+    static string[] cascadeBlendKeywords = {
+        "_CASCADE_BLEND_SOFT",
+        "_CASCADE_BLEND_DITHER"
+    };
     static int dirShadowAtlasId = Shader.PropertyToID("_DirectionalShadowAtlas"),
                dirShadowMatricesId = Shader.PropertyToID("_DirectionalShadowMatrices"),
                cascadeCountId = Shader.PropertyToID("_CascadeCount"),
                cacadeCullingSpheresId = Shader.PropertyToID("_CascadeCullingSpheres"),
-               cascadeDataId=Shader.PropertyToID("_CascadeData"),
+               cascadeDataId = Shader.PropertyToID("_CascadeData"),
+               shadowAtlasSizeId = Shader.PropertyToID("_ShadowAtlasSize"),
                shadowDistenceFadeId= Shader.PropertyToID("_ShadowDistenceFade");
-     static Matrix4x4[] dirshadowMatrices = new Matrix4x4[maxShadowedDirectionalLightCount * maxCascades];
+    static Matrix4x4[] dirshadowMatrices = new Matrix4x4[maxShadowedDirectionalLightCount * maxCascades];
     static Vector4[] cascadeCullingSpheres = new Vector4[maxCascades],
                      cascadeData = new Vector4[maxCascades];
     public void SetUp(ScriptableRenderContext context, CullingResults cullingResults,
@@ -67,13 +77,13 @@ public class Shadow
         }
         else
         {
-            buffer.GetTemporaryRT(dirShadowAtlasId, 1, 1, 32, FilterMode.Bilinear, RenderTextureFormat.Shadowmap);
+            buffer.GetTemporaryRT(dirShadowAtlasId, 1, 1, 32, UnityEngine.FilterMode.Bilinear, RenderTextureFormat.Shadowmap);
         }
     }
     private void RenderDirectionalShadows()
     {
         int atlasSize = (int)shadowSettings.directional.atlasSize;
-        buffer.GetTemporaryRT(dirShadowAtlasId,atlasSize, atlasSize,32,FilterMode.Bilinear,RenderTextureFormat.Shadowmap);
+        buffer.GetTemporaryRT(dirShadowAtlasId,atlasSize, atlasSize,32, UnityEngine.FilterMode.Bilinear,RenderTextureFormat.Shadowmap);
         buffer.SetRenderTarget(dirShadowAtlasId,RenderBufferLoadAction.DontCare,RenderBufferStoreAction.Store);
         buffer.ClearRenderTarget(true,false,Color.clear);
         buffer.BeginSample(bufferName);
@@ -95,9 +105,29 @@ public class Shadow
         );
         buffer.SetGlobalVectorArray(cascadeDataId, cascadeData);
         buffer.SetGlobalMatrixArray(dirShadowMatricesId, dirshadowMatrices);
+        SetKeyWords(directionFilterKeywords,(int)shadowSettings.directional.fileter-1);
+        SetKeyWords(cascadeBlendKeywords, (int)shadowSettings.directional.blendMode - 1);
+        buffer.SetGlobalVector(
+            shadowAtlasSizeId, new Vector4(atlasSize, 1f / atlasSize)
+        );
         buffer.EndSample(bufferName);
         ExecuteBuffer();
 
+    }
+    private void SetKeyWords(string[] keywords,int enabledIndex)
+    {
+       
+        for(int i=0;i< keywords.Length;i++)
+        {
+            if (i == enabledIndex)
+            {
+                buffer.EnableShaderKeyword(keywords[i]);
+            }
+            else
+            {
+                buffer.DisableShaderKeyword(keywords[i]);
+            }
+        }
     }
     private void RenderDirectionalShadows(int index,int split,int tileSize)
     {
@@ -131,11 +161,13 @@ public class Shadow
     void SetCascadeData(int index,Vector4 cullingSphere,float tileSize)
     {
         float texelSize = 2f * cullingSphere.w / tileSize;
-        texelSize = texelSize * 1.4142136f;
+        float filterSize = texelSize * ((float)shadowSettings.directional.fileter+1f);
+        
         cascadeData[index] = new Vector4(
           1f / cullingSphere.w,
-          texelSize
+          filterSize * 1.4142136f
           );
+        cullingSphere.w -= filterSize;
         cullingSphere.w *= cullingSphere.w;
         cascadeCullingSpheres[index] = cullingSphere;
     }

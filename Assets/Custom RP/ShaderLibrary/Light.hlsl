@@ -27,6 +27,7 @@ float FadedShadowStrength(float distence,float scale,float fade)
 ShadowData GetShadowData(Surface surfaceWS)
 {
   ShadowData data;
+  data.cascadeBlend=1.0;
   data.strength=FadedShadowStrength(surfaceWS.depth,_ShadowDistenceFade.x,_ShadowDistenceFade.y);
   int i;
   //找到position属于哪个联级里
@@ -36,9 +37,14 @@ ShadowData GetShadowData(Surface surfaceWS)
 	float disSqr=DistanceSquared(surfaceWS.position,cullingSpheres.xyz);
 	if(disSqr<cullingSpheres.w)
 	{
+    	float fade=FadedShadowStrength(disSqr,_CascadeData[i].x,_ShadowDistenceFade.z);
 	   if(i==_CascadeCount-1)
 	   {
-	     data.strength*=FadedShadowStrength(disSqr,_CascadeData[i].x,_ShadowDistenceFade.z);
+	     data.strength*=fade;
+	   }
+	   else
+	   {
+	     data.cascadeBlend=fade;
 	   }
 	
 	   break;

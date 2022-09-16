@@ -10,5 +10,6 @@ struct Surface {
 	float metallic;
 	float smoothness;
 	float depth;
+	float dither;
 };
 #endif

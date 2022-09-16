@@ -427,7 +427,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.59
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
@@ -437,7 +437,7 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.6
+    m_Bias: 0.55
     m_NormalBias: 0.6
     m_NearPlane: 0.2
     m_CullingMatrixOverride:
@@ -1018,7 +1018,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1805885669}
   m_LocalRotation: {x: -0, y: 0.11722961, z: -0, w: 0.9931048}
-  m_LocalPosition: {x: -4.69, y: -3.89, z: -6.97}
+  m_LocalPosition: {x: -4.69, y: -3.99, z: -6.97}
   m_LocalScale: {x: 1, y: 1, z: 21.23}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1515,7 +1515,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129015259}
   m_LocalRotation: {x: -0, y: -0, z: 0.21822827, w: 0.9758978}
-  m_LocalPosition: {x: 1.659, y: -4.902, z: -9.84}
+  m_LocalPosition: {x: 1.659, y: -4.467, z: -9.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
